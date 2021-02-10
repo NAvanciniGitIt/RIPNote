@@ -57,7 +57,7 @@ end
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 gem 'devise', github: 'heartcombo/devise', branch: 'ca-omniauth-2'
-gem 'therubyracer'
+gem 'mini_racer'
 gem 'omniauth'
 gem 'omniauth-rails_csrf_protection'
 gem 'omniauth-facebook'
