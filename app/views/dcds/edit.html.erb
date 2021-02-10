@@ -1,0 +1,22 @@
+<h1>Edit <%= @dcd.first_name %> <%= @dcd.last_name %></h1>
+
+<%= form_for @dcd do |f| %> 
+  <div> 
+    <%= f.label :first_name %>
+    <%= f.text_field :first_name %>
+  </div>
+  <div>
+    <%= f.label :last_name %>
+    <%= f.text_field :last_name %> 
+  </div> 
+  <div>
+    <%= f.label :birthday %>
+    <%= f.date_field :birthday %> 
+  </div> 
+  <div>
+    <%= f.label :deathday %>
+    <%= f.date_field :deathday %> 
+  </div> 
+
+  <%= f.submit "Submit" %> 
+<% end %> 
