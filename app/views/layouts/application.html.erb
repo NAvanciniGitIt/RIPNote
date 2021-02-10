@@ -19,8 +19,8 @@
 
   <body>
     <nav>
-    <div class="nav-wrapper">
-      <a href="#" class="brand-logo">Logo</a>
+    <div class="nav-wrapper grey">
+      <a href="#" class="brand-logo">RiPNote</a>
       <ul id="nav-mobile" class="right hide-on-med-and-down">
         <li><%= link_to("Home", root_path) %></li>
           <% unless current_user %>
@@ -41,6 +41,7 @@
     <% end %>
 
     <%= content_tag("p", flash[:notice]) if flash[:notice] %>
+     <div class="container">
     <%= yield %>
   </body>
 </html>
