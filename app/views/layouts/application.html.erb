@@ -11,6 +11,27 @@
   </head>
 
   <body>
+    <nav>
+      <ul> 
+        <li><%= link_to("Home", root_path) %></li>
+          <% unless current_user %>
+        <li><%= link_to "Sign in with Facebook", user_facebook_omniauth_authorize_path, method: :post %></li>
+        <li><%= link_to("Log In", user_session_path) %></li>
+        <li><%= link_to("Sign Up", new_user_registration_path) %></li>
+            <% else %> 
+        <li><%= link_to("Deceased", dcds_path) %></li>
+        <li><%= link_to("Add A Deceased", new_dcd_path) %></li>
+        <li><%= link_to "Logout", destroy_user_session_path, method: :delete %></li>
+        <% end %> 
+      </ul>
+    </nav>
+    <% if flash[:error] %>
+      <% flash[:error].each do |error| %>
+        <p><%= error %></p>
+      <% end %> 
+    <% end %>
+
+    <%= content_tag("p", flash[:notice]) if flash[:notice] %>
     <%= yield %>
   </body>
 </html>
