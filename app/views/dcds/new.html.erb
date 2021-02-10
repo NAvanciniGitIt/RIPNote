@@ -1,0 +1,34 @@
+<h1>Deceased Boyyyye</h1>
+
+<%= form_for @dcd do |f| %> 
+  <div> 
+    <%= f.label :first_name %>
+    <%= f.text_field :first_name %>
+  </div>
+  <div>
+    <%= f.label :last_name %>
+    <%= f.text_field :last_name %> 
+  </div> 
+ <div>
+    <%= f.label :gender %>
+    <%= f.text_field :gender %> 
+  </div> 
+  <div>
+    <%= f.label :relationship %>
+    <%= f.text_field :relationship %> 
+  </div> 
+  <div>
+    <%= f.label :birthday %>
+    <%= f.date_field :birthday %> 
+  </div> 
+  <div>
+    <%= f.label :deathday %>
+    <%= f.date_field :deathday %> 
+  </div> 
+  <div class="field">
+    <%= f.label :picture %>
+    <%= f.file_field :picture %>
+  </div>
+
+  <%= f.submit "Add Deceased" %> 
+<% end %> 
