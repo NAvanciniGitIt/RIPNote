@@ -5,3 +5,10 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+
+Dcd.create([
+  { first_name: "Mary", last_name: "Mac", birthday: Date.today, deathday: Date.today },
+  { first_name: "Josh", last_name: "Mac", birthday: Date.today, deathday: Date.today },
+  { first_name: "Voldemort", last_name: "Marvolo", birthday: Date.today, deathday: Date.today },
+  { first_name: "Albus", last_name: "Dumbledore", birthday: Date.today, deathday: Date.today },
+  ])
