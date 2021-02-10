@@ -1,0 +1,18 @@
+<h1>Post on Someones Page!</h1>
+
+   <%= form_for(@post) do |f| %> <!--  -->
+    <%= f.hidden_field :user_id, value: current_user.id %> <!-- method from devise to call the user -->
+      <%= f.hidden_field :dcd_id, value: @dcd.id %> <!-- calling it from the instance variable in the form --> 
+      <%= f.label :title %>
+      <%= f.text_field :title %>
+
+      <%= f.label :post_content %>
+      <%= f.text_field :post_content %>
+      <div class="field">
+        <%= f.label :picture %>
+        <%= f.file_field :picture %>
+      </div>
+
+      <%= f.submit %>
+
+  <% end %> 
