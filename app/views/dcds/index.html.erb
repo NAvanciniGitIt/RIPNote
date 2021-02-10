@@ -1,0 +1,8 @@
+<h1>Deceased</h1>
+
+
+<ul> 
+  <% @dcds.each do |dcd| %> 
+    <li><%= link_to dcd.first_name, dcd_path(dcd) %></li> <!-- calling movie path give a value that we pulled from  object that we passed in-->
+  <% end %> 
+</ul>
