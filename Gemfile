@@ -61,5 +61,6 @@ gem 'mini_racer'
 gem 'omniauth'
 gem 'omniauth-rails_csrf_protection'
 gem 'omniauth-facebook'
-
 gem 'materialize-sass'
+gem 'simple_form'
+gem 'bootstrap', '~> 4.2.1'
