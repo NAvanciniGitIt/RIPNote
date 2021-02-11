@@ -1,10 +1,15 @@
 class DcdsController < ApplicationController
-  before_action :find_dcd, only: [:show, :edit, :destroy, :update]
+  before_action :find_dcd, only: [:show, :edit, :destroy, :update, :search]
   
 #dcd = Deceased
 
   def index 
     @dcds = Dcd.all
+    # @search = params["search"]
+    # if @search.present?
+    #   @first_name = @search["first_name"]
+    #   @dcds = Dcd.where("first_name LIKE ?", "%#{@first_name}%")
+    # end
   end
 
   def show
@@ -24,7 +29,7 @@ class DcdsController < ApplicationController
       if @dcd.save
         redirect_to dcds_path #singular to show page? 
       else 
-        flash.now[:error] = @dcd.errors.full_messages
+        error
         render :new
     end
   end 
@@ -36,7 +41,7 @@ class DcdsController < ApplicationController
     if @dcd.update(dcd_params)
       redirect_to dcd_path(@dcd)
     else
-      flash.now[:error] = @dcd.errors.full_messages
+      error
       render :edit
     end
   end 
@@ -54,7 +59,10 @@ class DcdsController < ApplicationController
   end 
 
   def dcd_params #permit only the attributes we added to our object
-    params.require(:dcd).permit(:first_name, :last_name, :relationship, :gender, :birthday, :deathday, :picture)
+    params.require(:dcd).permit(:first_name, :last_name, :relationship, :gender, :birthday, :deathday, :picture, :search)
   end 
   
+  def error
+    flash.now[:error] = @dcd.errors.full_messages
+  end
 end
