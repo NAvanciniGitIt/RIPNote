@@ -17,15 +17,15 @@ class PostsController < ApplicationController
   end
   
   def create
-    
     @post = Post.new(post_params)
+    @dcd = Dcd.find_by(params[:dcd_id])
     if @post.save
-      redirect_to posts_path
+      redirect_to dcds_path
     else
-      render :new   
+      flash.now[:error] = @post.errors.full_messages
+      render :new_dcd_post
     end
   end
-  
 
 
   private 
