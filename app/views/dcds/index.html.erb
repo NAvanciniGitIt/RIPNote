@@ -1,8 +1,15 @@
-<h1>Deceased</h1>
+<center><h1>Who to celebrate today? </h1></center>
 
+<!-- <h4>Looking for Someone?</h4>
 
-<ul> 
-  <% @dcds.each do |dcd| %> 
-    <li><%= link_to dcd.first_name, dcd_path(dcd) %></li> <!-- calling movie path give a value that we pulled from  object that we passed in-->
-  <% end %> 
-</ul>
+<%= simple_form_for :search, url: dcds_path, method: "GET", html: { class: 'form-inline' } do |f| %>
+  <%= f.input :first_name, input_html: {value: ""} %>   
+  <%= f.submit "Search", class: "btn btn-primary" %>
+<% end %> -->
+<div>
+  <ul> 
+    <% @dcds.each do |dcd| %> 
+      <li><%= link_to dcd.first_name, dcd_path(dcd) %></li> <!-- calling movie path give a value that we pulled from  object that we passed in-->
+    <% end %> 
+  </ul>
+</div>
