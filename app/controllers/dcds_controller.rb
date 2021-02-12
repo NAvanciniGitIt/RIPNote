@@ -12,7 +12,7 @@ class DcdsController < ApplicationController
   end
 
   def show
-    # binding.pry
+    #binding.pry
   end 
 
   def new
@@ -34,6 +34,7 @@ class DcdsController < ApplicationController
   end 
 
   def edit
+   
    redirect_if_not_dcd_user
   end 
 
@@ -60,7 +61,7 @@ class DcdsController < ApplicationController
   end 
 
   def dcd_params #permit only the attributes we added to our object
-    params.require(:dcd).permit(:first_name, :last_name, :relationship, :gender, :birthday, :deathday, :picture, :search, :user_id)
+    params.require(:dcd).permit(:first_name, :last_name, :relationship, :gender, :birthday, :deathday, :bio, :picture, :search, :user_id)
   end 
   
   def error
