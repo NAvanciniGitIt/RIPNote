@@ -2,9 +2,10 @@ class Post < ApplicationRecord
   
 
   belongs_to :user
-  belongs_to :dcd
+  belongs_to :dcd, dependent: :delete
   has_many :comments
   has_one_attached :picture
+
 
   validates_length_of :post_content, minimum: 1, maximum: 100, allow_blank: false
   validates :title, presence: true 
