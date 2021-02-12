@@ -7,7 +7,7 @@
     </div>
     <div class="card-content">
       <span class="card-title activator grey-text text-darken-4">Click to Read More About <%= @dcd.full_name %><i class="material-icons right">more_vert</i></span>
-      <%if current_user == @dcd.user%>
+      <%if current_user == @dcd.user_id%>
         <%= link_to "Edit", edit_dcd_path(@dcd) %> &nbsp; &nbsp; <%= link_to "Remove", dcd_path(@dcd), method: "delete" %>
       <% end %>
     </div>
