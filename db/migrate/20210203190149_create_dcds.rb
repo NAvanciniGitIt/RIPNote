@@ -7,6 +7,7 @@ class CreateDcds < ActiveRecord::Migration[6.1]
       t.string :gender
       t.date :birthday
       t.date :deathday
+      t.integer :user_id
       
       t.timestamps
     end
