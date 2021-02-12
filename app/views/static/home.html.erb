@@ -1,6 +1,27 @@
-<center><h1>Welcome To RiPNote</h1>
+<center><h3>Welcome</h3>
 
-<p>We're very sorry for your loss, but we hope that you can find some solace in celebrating the life of your loved one here.</p>
+<p>We're very sorry for your loss, and we hope that you can find some solace in celebrating the life of your loved one here.</p>
+<div class="container">
+  <%= form_tag "/dcds", method: "get" do %>
+      <%= label_tag "Looking For Someone?" %>
+      <%= text_field_tag :query %>
+      <%= submit_tag "Search", class: "btn grey darken-1" %>
+  <% end %>
+</div>
 
 
-<p>"Some day soon, perhaps in forty years, there will be no one alive who has ever known me. That's when I will be truly dead - when I exist in no one's memory."  ― Irvin D. Yalom, Love's Executioner and Other Tales of Psychotherapy </p></center>
+<div class="row", style="margin-top: 20px;">
+    <div class="col s6 m6">
+      <div class="card blue-grey darken-1">
+        <div class="card-content white-text">
+          <span class="card-title">Quote of the Day</span>
+          <p>"Some day soon, perhaps in forty years, there will be no one alive who has ever known me. That's when I will be truly dead - when I exist in no one's memory."  ― Irvin D. Yalom, Love's Executioner and Other Tales of Psychotherapy.</p>
+        </div>
+      </div>
+    </div> 
+  <div class="col s6 m6">
+    <img class="materialboxed" width="450" src="assets/dcd_here.png">
+  </div>
+</div>
+</center>
+
