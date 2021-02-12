@@ -1,4 +1,7 @@
 <center>
+
+  <h1><%= @dcd.full_name %> </h1>
+
 <div class="container">
   <div class="row">
     <div class="card">
@@ -7,7 +10,7 @@
     </div>
     <div class="card-content">
       <span class="card-title activator grey-text text-darken-4">Click to Read More About <%= @dcd.full_name %><i class="material-icons right">more_vert</i></span>
-      <%if current_user == @dcd.user_id%>
+      <% if @dcd.user == current_user %>
         <%= link_to "Edit", edit_dcd_path(@dcd) %> &nbsp; &nbsp; <%= link_to "Remove", dcd_path(@dcd), method: "delete" %>
       <% end %>
     </div>
@@ -17,12 +20,14 @@
         <p>Gender: <%= @dcd.gender %></p>
         <p>Birthday: <%= @dcd.birthday %></p>
         <p>Death Day: <%= @dcd.deathday %></p>
+        <p>Bio: <%= @dcd.bio %></p>
       </div>
     </div>
   </div>
 </div>
 
-<h3>Share Your Memories!</h3>
+<h4>Share Your Memories!</h4>
+</center>
 <% if @dcd.posts %>
   <% @dcd.posts.each do |p| %>
   <div>
@@ -35,7 +40,6 @@
 <% end %>
 
 <%= link_to "Add a Post", new_dcd_post_path(@dcd) %>
-</center>
 
 
 
