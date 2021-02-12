@@ -3,10 +3,11 @@ Rails.application.routes.draw do
     #static routes
   root to: 'static#home'
   
-  resources :comments
   resources :posts 
   resources :dcds do 
-    resources :posts, only: [:new, :create, :index, :show]
+    resources :posts, only: [:new, :create, :index, :show] do 
+      resources :comments 
+    end
   end #gives all the restful routes
   devise_for :users, :controllers => { :omniauth_callbacks => "users/omniauth_callbacks" }
 
