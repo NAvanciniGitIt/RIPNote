@@ -2,25 +2,29 @@
   <div class = "containter">
 <%= form_for dcd do |f| %> 
   <%= f.hidden_field :user_id, :value => current_user.id %>
-  <div> 
+<div class="row">   
+  <div class="col s6"> 
     <%= f.label :first_name %>
     <%= f.text_field :first_name %>
   </div>
-  <div>
+  <div class="col s6"> 
     <%= f.label :last_name %>
     <%= f.text_field :last_name %> 
   </div> 
- <div>
+</div>
+<div class="row">
+ <div class="col s6">
     <%= f.label :gender %>
     <%= f.text_field :gender %> 
   </div> 
-  <div>
+  <div class="col s6">
     <%= f.label :relationship %>
     <%= f.text_field :relationship %> 
   </div> 
+</div>
   <div>
     <%= f.label :birthday %>
-    <%= f.date_field :birthday %> 
+    <%= f.date_field :birthday%> 
   </div> 
   <div>
     <%= f.label :deathday %>
@@ -34,3 +38,7 @@
   <%= f.submit button_name %> 
 <% end %> 
 
+
+<script> $(document).ready(function(){
+    $('.datepicker').datepicker();
+  });</script>
