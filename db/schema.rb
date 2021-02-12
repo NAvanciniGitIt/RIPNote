@@ -57,6 +57,8 @@ ActiveRecord::Schema.define(version: 2021_02_09_165639) do
     t.string "gender"
     t.date "birthday"
     t.date "deathday"
+    t.text "bio"
+    t.integer "user_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
