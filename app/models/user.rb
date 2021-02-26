@@ -6,8 +6,9 @@ class User < ApplicationRecord
   devise :omniauthable, :omniauth_providers => [:facebook]       
 
   has_many :posts
+  has_many :dcds
   has_many :comments, through: :posts
-  has_many :dcds, through: :posts
+  has_many :posts, through: :dcds
   
 
   def self.new_with_session(params, session)

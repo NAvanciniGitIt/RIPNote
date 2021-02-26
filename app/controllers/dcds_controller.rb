@@ -11,8 +11,17 @@ class DcdsController < ApplicationController
     end
   end
 
+  def mine 
+    @user_dcd = []
+    @dcds = Dcd.all
+    @dcds.each do |d| 
+      if d.user_id == current_user.id
+        @user_dcd << d
+      end
+    end 
+  end 
+
   def show
-    #binding.pry
   end 
 
   def new
@@ -34,7 +43,6 @@ class DcdsController < ApplicationController
   end 
 
   def edit
-   
    redirect_if_not_dcd_user
   end 
 
