@@ -12,13 +12,8 @@ class DcdsController < ApplicationController
   end
 
   def mine 
-    @user_dcd = []
     @dcds = Dcd.all
-    @dcds.each do |d| 
-      if d.user_id == current_user.id
-        @user_dcd << d
-      end
-    end 
+    @dcds = current_user.dcds
   end 
 
   def show
