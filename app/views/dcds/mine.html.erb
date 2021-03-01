@@ -3,7 +3,7 @@
 <div class="container">
   <div class="row">
       <div class="col s6 m6">
-        <% @user_dcd.each do |dcd| %> 
+        <% @dcds.each do |dcd| %> 
           <div class="card">
             <div class="card-image">
               <%= image_tag(dcd.picture, width: 200) if dcd.picture.attached? %>
